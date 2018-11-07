@@ -67,27 +67,85 @@ fieldset legend
 	object-fit: contain;
 }
 
-.sliding_pictures
+#sliding_pictures
 {
-	margin-left:auto;
-	margin-right:auto;
+	position: relative;
+	margin-left:20%;
+	margin-right:20%;
 	display:block;
-	width:60%;
-	height:400px;
+	width:70%;
 }
 
-.sliding_pictures img
+.carousel
 {
-	width:100%;
-	height:90%;
-	object-fit: cover;
-	vertical-align: bottom;
+	position: relative;
 }
 
-.sliding_commentary
+.carousel_box
+{
+	overflow: hidden;
+}
+
+.carousel_container
+{
+	transition: transform 0.3s;
+	transform: translate3d(0,0,0);
+	content: '';
+	clear: both;
+	display: table;
+	flex-shrink: 0;
+}
+
+.carousel_item
+{
+	float: left;
+	overflow: hidden;
+}
+
+.carousel_next, .carousel_prev 
+{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: #FFF url(../pictures/next.svg) center center no-repeat;
+	background-size: 20px 20px;
+	border-radius: 50%;
+	top: 50%;
+	margin-top: -20px;
+	right: -20px;
+	box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+	cursor: pointer;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.carousel_next:hover, .carousel_prev:hover
+{
+	transform: scale(1.2);
+}
+
+.carousel_prev
+{
+	background-image: url(../pictures/prev.svg);
+	right: auto;
+	left: -20px;
+}
+
+.carousel_prev-hidden, .carousel_next-hidden
+{
+	opacity: 0;
+}
+
+.item_image img
+{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.item_description
 {
 	text-align:center;
-	background-color: #DCDCDC;
+	background-color: #FFF;
 	border:1px solid black;
 	padding:5px;
 }
