@@ -1,12 +1,21 @@
 document.addEventListener('DOMContentLoaded', function(event) {
 
 	var homeWrapper = document.querySelector('.home-wrapper');
-	var nastyBugger = document.querySelector('.loaded-content');
+	var loadedContent = document.querySelector('.loaded-content');
 	var homeTitles = document.querySelector('.home-titles');
 	var homeContent = document.querySelector('.home-content');
+	var homeNav = document.querySelector('.home-nav');
 	var menuItems = document.querySelectorAll('.home-nav ul li');
-	var menuItemLabels = document.querySelectorAll('.home-nav ul li div p');
-	var menuItemArrows = document.querySelectorAll('.home-nav ul li div span');
+	var menuItemDivs = document.querySelectorAll('.home-nav ul li div');
+	var menuItemLabels = document.querySelectorAll('.home-nav ul li p');
+	// var menuItemArrows = document.querySelectorAll('.home-nav ul li div span');
+
+	const pages = [
+		'offres.html',
+		'procedure.html',
+		'pourquoi.html',
+		'contact.html'
+	];
 
 	const state = {
 		pageOpen: false,
@@ -18,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
 			affectedMenuItem = helpers.getMenuItemIndex(e.target);
 			menuItems[affectedMenuItem].classList.add('highlight');
 			menuItemLabels[affectedMenuItem].classList.add('italic');
-			menuItemArrows[affectedMenuItem].classList.remove('hidden');
 		},
 		highlightOff: function(e) {
 			affectedMenuItem = helpers.getMenuItemIndex(e.target);
@@ -27,48 +35,43 @@ document.addEventListener('DOMContentLoaded', function(event) {
 				if (state.openedMenuItem !== affectedMenuItem) {
 					menuItems[affectedMenuItem].classList.remove('highlight');
 					menuItemLabels[affectedMenuItem].classList.remove('italic');
-					menuItemArrows[affectedMenuItem].classList.add('hidden');
 				}
 			} else {
 				menuItems[affectedMenuItem].classList.remove('highlight');
 				menuItemLabels[affectedMenuItem].classList.remove('italic');
-				menuItemArrows[affectedMenuItem].classList.add('hidden');
 			}
 		},
 		menuItemClicked: function(e) {
 			e.stopPropagation();
 			homeWrapper.classList.add('moved-wrapper');
-			nastyBugger.classList.add('moved-content');
-			affectedMenuItem = helpers.getMenuItemIndex(e.target);
+			loadedContent.classList.add('moved-content');
+			affectedMenuItem = helpers.getMenuItemIndex(e.currentTarget); // .currentTarget makes sure it's the element with the listener attached, not child
 
+			// Unhighlight the previously opened menu
 			if (state.pageOpen) {
 				menuItems[state.openedMenuItem].classList.remove('highlight');
 				menuItemLabels[state.openedMenuItem].classList.remove('italic');
-				menuItemArrows[state.openedMenuItem].classList.add('hidden');
 			}
 
-			menuItems[affectedMenuItem].classList.add('highlight');
-			menuItemLabels[affectedMenuItem].classList.add('italic');
-			menuItemArrows[affectedMenuItem].classList.remove('hidden');
 
 			homeTitles.classList.add('fade');
 			homeContent.classList.add('moved-over');
+			homeNav.classList.add('moved-nav');
 
-			helpers.loadFile('testing.html');
-			// helpers.wtf();
+			helpers.loadContent(affectedMenuItem);
 
 			state.pageOpen = true;
 			state.openedMenuItem = affectedMenuItem;
 		},
 		documentClicked: function(e) {
 			homeWrapper.classList.remove('moved-wrapper');
-			nastyBugger.classList.remove('moved-content');
+			loadedContent.classList.remove('moved-content');
 			homeTitles.classList.remove('fade');
 			homeContent.classList.remove('moved-over');
+			homeNav.classList.remove('moved-nav');
 
 			menuItems[state.openedMenuItem].classList.remove('highlight');
 			menuItemLabels[state.openedMenuItem].classList.remove('italic');
-			menuItemArrows[state.openedMenuItem].classList.add('hidden');
 
 			state.pageOpen = false;
 			state.openedMenuItem = null;
@@ -88,16 +91,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
 				if (target.parentNode.children[i] == target) {return i};
 			}
 		},
-		wtf: function() {
-			console.log('hey')
-		},
 		// Can't use fetch on a local machine
-		loadContent: function() {
-			fetch('testing.html')
-			.then(function(response) { return response.json(); })
+		loadContent: function(affectedMenuItem) {
+			var url = 'https://etud.insa-toulouse.fr/~zakharov/' + pages[affectedMenuItem];
+
+			fetch(url)
+			.then(function(response) { return response.text(); })
 			.then(function(data) {
-				console.log('hey');
+				loadedContent.innerHTML = data;
 			})
+			.catch(function(error) { console.log(error) });
 		},
 	};
 
