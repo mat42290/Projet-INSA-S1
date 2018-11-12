@@ -13,7 +13,6 @@ class Carousel {
 	 * @param {boolean} loop Doit-on boucler en fin de carousel ?
 	 */
 	constructor(element, options = {}) {
-		console.log('hello')
 		this.element = element
 		this.options = Object.assign({},{
 			slidesToScroll: 1,
@@ -32,7 +31,6 @@ class Carousel {
 		this.box = this.createDivWithClass('carousel_box')
 		this.root.appendChild(this.box)
 		this.box.appendChild(this.container)
-		//this.root.appendChild(this.container)
 		this.element.appendChild(this.root)
 		this.items = children.map((child) => {
 			let item = this.createDivWithClass('carousel_item')
@@ -75,11 +73,12 @@ class Carousel {
 		this.root.appendChild(prevButton)
 		nextButton.addEventListener('click',this.next.bind(this))
 		prevButton.addEventListener('click',this.prev.bind(this))
+		this.timer=setInterval(this.next.bind(this),7000)
 		if(this.options.loop===true) {
 			return
 		}
 		this.onMove(index => {
-			if(index == 0)
+			if(index === 0)
 			{
 				prevButton.classList.add('carousel_prev-hidden')
 			}
@@ -99,10 +98,14 @@ class Carousel {
 
 	next() {
 		this.gotoItem(this.currentItem + this.slidesToScroll)
+		clearInterval(this.timer)
+		this.timer=setInterval(this.next.bind(this),7000)
 	}
 
 	prev() {
 		this.gotoItem(this.currentItem - this.slidesToScroll)
+		clearInterval(this.timer)
+		this.timer=setInterval(this.next.bind(this),7000)
 	}
 
 	/**
@@ -180,11 +183,9 @@ class Carousel {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	console.log('yo')
 	new Carousel(document.querySelector('#sliding_pictures'), {
 	slidesToScroll: 1,
 	slidesVisible: 1,
 	loop: true
 	})
 })
-
