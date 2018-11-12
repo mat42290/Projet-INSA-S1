@@ -22,11 +22,7 @@ body {
 
 .loaded-content {
 	position: absolute;
-	/*right: -1048px;*/
-	/*right: -1212px;*/
 	right: -1148px;
-	/*width: 1048px;*/
-	/*width: 1212px;*/
 	width: 1148px;
 	height: 100vh;
 
@@ -36,23 +32,17 @@ body {
 }
 
 .moved-wrapper {
-	/*left: -1033px;*/
-	/*left: -1048px;*/
-	/*transform: translateX(-1048px);*/
 	transform: translateX(-1148px);
 	transition: transform 0.3s ease-in-out;
 }
 
 .moved-content {
-	/*transform: translateX(-1048px);*/
-	/*transform: translateX(-1212px);*/
 	transform: translateX(-1148px);
 	transition: transform 0.3s ease-in-out;
 }
 
 .home-logo {
 	z-index: 2;
-	/*padding: 10px;*/
 	padding: 1.1vh;
 	height: 5vh;
 }
