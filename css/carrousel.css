@@ -57,12 +57,17 @@
 	opacity: 0;
 }
 
+.item_image
+{
+	max-height: 535px;
+	overflow: hidden;
+}
+
 .item_image img
 {
 	display: block;
 	width: 100%;
 	height: auto;
-	max-height:800px;
 }
 
 .item_description
