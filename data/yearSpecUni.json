@@ -1,0 +1,50 @@
+{
+	"3" : {
+		"MIC" : {
+			"Allemagne" : [
+				"Technische Universität Darmstadt",
+				"Universität Hamburg",
+				"Technische Universität München"
+			],
+			"Canada" : [
+				"Bishop's University",
+				"Concordia University",
+				"École Polytechnique de Montréal"
+			],
+			"Norvege" : [
+				"Universitetet i Stavanger",
+				"Norges Teknisk-Naturvitenskapelige Universitet"
+			]
+		},
+		"IMACS" : {
+			"Allemagne" : [
+				"Technische Universität Darmstadt",
+				"Universität Hamburg",
+				"Technische Universität München"
+			],
+			"Canada" : [
+				"Bishop's University",
+				"Concordia University",
+				"École Polytechnique de Montréal"
+			],
+			"Espagne" : [
+				"Universitat Politécnica de Catalunya - EET (Escola d'Engineyria de Terrassa)",
+				"Universidad Autónoma de Madrid",
+				"Universidad de Valencia"
+			]
+		},
+		"IC" : {},
+		"ICBE" : {}
+	},
+
+	"4" : {
+		"GPE" : {},
+		"GB" : {},
+		"GC" : {},
+		"GM" : {},
+		"AE" : {},
+		"GP" : {},
+		"IR" : {},
+		"GMM" : {}
+	}
+}

@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
 	var menuItemDivs = document.querySelectorAll('.home-nav ul li div');
 	var menuItemLabels = document.querySelectorAll('.home-nav ul li p');
 
+	var offersOpened = new Event('offersOpened');
+
 	const pages = [
-		'offres.html',
-		'procedure.html',
-		'pourquoi.html',
-		'contact.html'
+		'main/offers.html',
+		'main/procedure.html',
+		'main/why.html',
+		'main/contact.html'
 	];
 
 	const state = {
@@ -66,6 +68,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 			state.pageOpen = true;
 			state.openedMenuItem = affectedMenuItem;
+
+			// localStorage.setItem('state', state);
+
+			if (state.openedMenuItem === 0) {
+				window.dispatchEvent(offersOpened);
+			}
 		},
 		documentClicked: function(e) {
 			homeWrapper.classList.remove('moved-wrapper');

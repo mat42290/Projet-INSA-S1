@@ -1,0 +1,79 @@
+{
+	"Technische Universität München" : [
+		[
+			101,
+			"Advanced Algorithms",
+			["MIC"],
+			"yep, you'll do plenty of algorithm shitz"
+		],
+
+		[
+			123,
+			"Advanced Physics",
+			["IMACS"],
+			"Newtons law's are all ya need for this joke of a class"
+		],
+
+		[
+			124,
+			"Algebra",
+			["MIC", "IMACS"],
+			"fun Fun FUN!"
+		]
+	],
+
+	"Concordia University" : [
+		[
+			103,
+			"Advanced Networking",
+			["MIC"],
+			"no, not LinkedIn account creation"
+		],
+
+		[
+			133,
+			"Advanced Nano-molecular Macro-congregated Fibers",
+			["IMACS"],
+			"even we don't know what that means"
+		],
+
+		[
+			165,
+			"Reading",
+			["MIC", "IMACS"],
+			"admit it, we all have problems with this"
+		]
+	],
+
+	"Universidad Autónoma de Madrid" : [
+		[
+			154,
+			"Electronic Components for Computation",
+			["IMACS"],
+			"it sounds fancy, and it is"
+		],
+
+		[
+			132,
+			"Advanced Automation",
+			["IMACS"],
+			"next time you need 100 samples, boom, automated"
+		]
+	],
+
+	"Norges Teknisk-Naturvitenskapelige Universitet" : [
+		[
+			111,
+			"Professional Development",
+			["MIC"],
+			"hah, you really thought you'd escape that shit? fool"
+		],
+
+		[
+			119,
+			"Cloud",
+			["MIC"],
+			"rains a lot, so we take the time to study clouds"
+		]
+	]
+}
