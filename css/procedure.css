@@ -1,0 +1,99 @@
+body
+{
+	background-color: #f2f2f2;
+	font-family:"Trebuchet MS", Georgia, Verdana, serif;
+	text-align:justify;
+}
+
+h1
+{
+	color:black;
+	font-size:3em;
+	font-weight: bold;
+	text-align: center;
+}
+
+h2
+{
+	color:black;
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.intro
+{
+	border-radius: 5px;
+	display: block;
+	margin-left:auto;
+	margin-right: auto;
+	padding:1%;
+	width: 80%;
+	margin-bottom: 3%;
+	background-color:white;
+	box-shadow: 5px 5px 5px #ccc;
+}
+
+.conteneur
+{
+	display: flex;
+	flex:wrap;
+	justify-content: center;
+}
+
+.steps
+{
+	border-radius: 10px;
+	margin-right: 5%;
+	padding: 4px;
+	width: 50%;
+	background-color:white;
+	box-shadow: 5px 5px 5px #ccc;
+}
+
+.space
+{
+	margin-bottom: 2%;
+}
+
+.accordion
+{
+	width:80%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.accordion__button
+{
+	border:1px solid black;
+}
+
+.dossier
+{
+	width: 40%;
+	padding:1%;
+	background-color:white;
+	box-shadow: 5px 5px 5px #ccc;
+	border-radius:5px;
+}
+
+.dossier .title
+{
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.dossier .conditions,.dossier .elements
+{
+	margin-top:2%;
+	width:80%;
+	border:1px solid black;
+	border-radius: 10px;
+	padding: 1%;
+	background-color: #f2f2f2;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

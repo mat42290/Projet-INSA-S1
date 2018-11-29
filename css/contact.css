@@ -1,43 +1,88 @@
 body
 {
-	background-color: white;
+	background-color: #f2f2f2;
 	font-family:"Trebuchet MS", Georgia, Verdana, serif;
-	text-align:justify;
 }
 
 h1
 {
-	color:red;
+	color:black;
 	font-size:3em;
 	font-weight: bold;
 	text-align: center;
 }
 
+h2
+{
+	color: black;
+	font-size:2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.title
+{
+	text-align: center;
+	font-size:1.5em;
+	font-weight: bold;
+}
+
+.conteneur1
+{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: center;
+	align-content: space-around;
+}
+
 .form__contact
 {
+	width: 40%;
+	height: auto;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 5px 5px 5px #ccc;
+	padding:10px;
+	margin-right: 5%;
+	margin-bottom: 4%;
+	text-align: justify;
+}
 
+.form__contact p
+{
+	margin-bottom: 4%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:90%;
 }
 
 form {
   	margin: 0 auto;
-  	width: 400px;
+  	width: 80%;
  	padding: 1em;
-  	border: 1px solid #CCC;
  	border-radius: 1em;
 }
 
-label {
-  	display: inline-block;
-  	width: 90px;
-  	text-align: right;
-}
-
-input {
-  	width: 300px;
+input, textarea {
+  	width: 90%;
+  	display: block;
+  	margin-left:auto;
+  	margin-right:auto;
   	border: 1px solid #999;
+  	margin-bottom: 2%;
+  	background-color:#f2f2f2;
 }
 
-input:focus {
+textarea {
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+  	vertical-align: top;
+  	height: 10em;
+}
+
+input:focus, textarea:focus {
  	 border-color: #000;
 }
 
@@ -47,15 +92,35 @@ input:focus {
 }
 
 button {
-  	margin-left: .5em;
+  	margin-left: 28%;
+}
+
+.conteneur2
+{
+	max-width: 400px;
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-around;
+	align-content: space-around;
+	flex-direction: column;
+}
+
+.contact__eleve, .contact__univ
+{
+	width:98%;
+	height:auto;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 5px 5px 5px #ccc;
+	padding: 4%;
 }
 
 .contact__eleve
 {
-
+	margin-bottom: 10%;
 }
 
-.contact__univ
+.adresse
 {
-
+	text-align:center;
 }
