@@ -3,7 +3,7 @@
 #### Lien [Google Drive]. Il y a plusieurs documents pour organiser et faciliter le travail.
 
 ## Pour commencer avec Git
-Si Git n’est pas déjà installé, il faut l’installer alors (gros con).  
+Si Git n’est pas déjà installé, il faut l’installer.  
 Sur Windows:
 * Allez [ici][1] pour l'installer.
 * Chercher et ouvrir Git Bash (ou Git GUI). Vous pouvez en plus installer GitHub Desktop pour avoir un joli GUI.
